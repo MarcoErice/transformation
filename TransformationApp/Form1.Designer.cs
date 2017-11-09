@@ -67,6 +67,7 @@
             this.btnTransform.TabIndex = 2;
             this.btnTransform.Text = "Transfom";
             this.btnTransform.UseVisualStyleBackColor = true;
+            this.btnTransform.Click += new System.EventHandler(this.btnTransform_Click);
             // 
             // listBox1
             // 

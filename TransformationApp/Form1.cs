@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransformationLib;
 
 namespace TransformationApp
 {
@@ -32,6 +33,15 @@ namespace TransformationApp
             var secondFile = File.ReadAllLines(openFileDialog2.FileName);
             string[] lines = secondFile;
             listBox2.Items.AddRange(lines);
+        }
+
+        private void btnTransform_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+            string amountContent = File.ReadAllText(openFileDialog1.FileName);
+            string quantityContent = File.ReadAllText(openFileDialog2.FileName);
+            var result = Transformation.Transform(amountContent, quantityContent);
+            File.WriteAllText(saveFileDialog1.FileName, result);
         }
     }
 }
