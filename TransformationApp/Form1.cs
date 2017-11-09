@@ -42,6 +42,8 @@ namespace TransformationApp
             string quantityContent = File.ReadAllText(openFileDialog2.FileName);
             var result = Transformation.Transform(amountContent, quantityContent);
             File.WriteAllText(saveFileDialog1.FileName, result);
+            richTextBox1.LoadFile(saveFileDialog1.FileName,
+            RichTextBoxStreamType.PlainText);
         }
     }
 }
